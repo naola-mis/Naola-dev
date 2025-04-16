@@ -1,0 +1,172 @@
+/* Base Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #2d3748;
+}
+
+/* Screen Containers */
+.screen {
+    display: none;
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.screen.active {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Form Elements */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+input {
+    padding: 0.8rem;
+    border: 2px solid #cbd5e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    border-color: #667eea;
+    outline: none;
+}
+
+/* Buttons */
+button {
+    background: #4a5568;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+button:hover:not(:disabled) {
+    background: #2d3748;
+    transform: translateY(-2px);
+}
+
+button:disabled {
+    background: #cbd5e0;
+    cursor: not-allowed;
+}
+
+/* Quiz Elements */
+.progress-bar {
+    height: 8px;
+    background: #e2e8f0;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+.progress {
+    height: 100%;
+    background: #48bb78;
+    width: 0;
+    transition: width 0.3s ease;
+}
+
+.question-container {
+    margin: 2rem 0;
+}
+
+.option {
+    background: #f7fafc;
+    border: 2px solid #cbd5e0;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.option:hover {
+    background: #ebf4ff;
+    border-color: #667eea;
+}
+
+.option.selected {
+    background: #667eea;
+    color: white;
+    border-color: #667eea;
+}
+
+/* Results & Feedback */
+.emoji-rating {
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0;
+    justify-content: center;
+}
+
+.emoji {
+    font-size: 2rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.emoji:hover {
+    transform: scale(1.2);
+}
+
+textarea {
+    width: 100%;
+    padding: 1rem;
+    margin: 1rem 0;
+    border: 2px solid #cbd5e0;
+    border-radius: 8px;
+    resize: vertical;
+}
+
+/* Goodbye Screen */
+#goodbye-screen {
+    text-align: center;
+    padding: 3rem;
+}
+
+.goodbye-message {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    animation: fadeIn 1s ease-in;
+}
+
+.excellent { color: #2f855a; }
+.average { color: #c05621; }
+.poor { color: #c53030; }
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+    
+    .screen {
+        padding: 1rem;
+    }
+    
+    h1 {
+        font-size: 1.5rem;
+    }
+}
